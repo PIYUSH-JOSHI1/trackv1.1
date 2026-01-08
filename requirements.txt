@@ -3,7 +3,7 @@ Flask>=2.3.0,<3.0.0
 Flask-CORS>=4.0.0
 gunicorn>=21.0.0
 Werkzeug>=2.3.0,<3.0.0
-
+# updated
 # Build tools (required for Render)
 setuptools>=65.0.0
 wheel>=0.40.0
@@ -38,3 +38,4 @@ cvzone>=1.6.0
 # Supabase Integration
 supabase>=2.0.0
 python-dotenv>=1.0.0
+
