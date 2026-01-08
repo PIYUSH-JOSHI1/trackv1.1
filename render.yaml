@@ -12,8 +12,11 @@ services:
     plan: starter
     branch: main
     
+    # Python version - Use 3.10 for ML package compatibility
+    pythonVersion: "3.10.0"
+    
     # Build settings
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120
     
     # Health check
