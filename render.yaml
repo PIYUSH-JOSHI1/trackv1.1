@@ -1,0 +1,45 @@
+# ==============================================
+# Render Blueprint for Track-V Backend
+# ==============================================
+# This file allows one-click deployment on Render
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: track-v-backend
+    runtime: python
+    region: oregon
+    plan: starter
+    branch: main
+    
+    # Build settings
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120
+    
+    # Health check
+    healthCheckPath: /health
+    
+    # Environment variables
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      
+      # Supabase Configuration (set these manually in Render dashboard)
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      
+      # Email Configuration (set these manually in Render dashboard)
+      - key: SMTP_SERVER
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_EMAIL
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_SENDER_NAME
+        value: Track-V Traffic System

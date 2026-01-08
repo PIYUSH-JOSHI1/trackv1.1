@@ -1,0 +1,36 @@
+# Core Flask dependencies
+Flask==2.3.3
+Flask-CORS==4.0.0
+gunicorn==21.2.0
+
+# Computer Vision & AI (optimized for Render)
+opencv-python-headless==4.8.1.78
+ultralytics==8.0.196
+numpy==1.24.3
+Pillow==10.0.1
+scikit-image==0.21.0
+
+# Machine Learning (CPU versions for cloud deployment)
+torch==2.0.1
+torchvision==0.15.2
+scipy==1.11.3
+
+# Tracking algorithm
+filterpy==1.4.5
+
+# Video processing and streaming
+yt-dlp==2023.7.6
+
+# Visualization (required by sort.py)
+matplotlib==3.7.2
+
+# Cloud services
+requests==2.31.0
+
+# Utilities (essential only)
+cvzone==1.6.1
+Werkzeug==2.3.7
+
+# Supabase Integration
+supabase==2.3.4
+python-dotenv==1.0.0
